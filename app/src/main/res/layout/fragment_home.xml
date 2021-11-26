@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F1F1"
+    tools:context=".ui.home.HomeFragment">
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/_8sdp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/et_round"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
+        android:drawablePadding="@dimen/_8sdp"
+        android:hint="Repository name"
+        android:maxLines="1"
+        android:padding="@dimen/_8sdp"
+        android:paddingLeft="@dimen/_5sdp"
+        android:textColor="#5A5A5A"
+        android:queryHint="Search"
+        android:textColorHint="#6C6C6C"
+        app:layout_constraintHeight_percent="0.075"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="10dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search"
+        tools:listitem="@layout/repos_item" />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progress"
+        style="@style/SpinKitView.Large.Circle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
