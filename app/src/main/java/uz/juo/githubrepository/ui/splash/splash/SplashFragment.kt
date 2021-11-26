@@ -42,7 +42,7 @@ class SplashFragment : Fragment() {
         var handler = Handler(Looper.getMainLooper())
         handler.postDelayed({
 //            if (isRegistrated()) {
-                SplashActivity().finish()
+                activity?.finish()
                 var intent = Intent(requireContext(), MainActivity::class.java)
                 startActivity(intent)
 //            } else {

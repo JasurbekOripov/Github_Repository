@@ -44,13 +44,13 @@ class AuthFragment : Fragment() {
     }
 
     fun login() {
-        var res = viewModel.login(UserLoginReq("JasurbekOripov", "J@ck2777"))
-        res.observe(viewLifecycleOwner, {
-            var token = it.token
-            var data = viewModel.getData(token)
-            Log.d("TAG", "login12: $data")
-
-        })
+//        var res = viewModel.login(UserLoginReq("JasurbekOripov", "J@ck2777"))
+//        res.observe(viewLifecycleOwner, {
+//            var token = it.token
+//            var data = viewModel.getData(token)
+//            Log.d("TAG", "login12: $data")
+//
+//        })
         SplashActivity().finish()
         var intent = Intent(requireContext(), MainActivity::class.java)
         startActivity(intent)

@@ -57,7 +57,11 @@ class HomeFragment : Fragment() {
         val doubleBounce: Sprite = FadingCircle()
         progressBar.indeterminateDrawable = doubleBounce
         binding.rv.visibility = View.INVISIBLE
-        loadData("a")
+        if(networkHepler.isNetworkConnected()){
+            loadData("a")
+        }else{
+            view?.let { Snackbar.make(it,"No internet connection",Snackbar.LENGTH_SHORT).show() }
+        }
         showLoading()
         reposAdapter = RepositoryAdapter(requireContext(), object : RepositoryAdapter.itemClick {
             override fun setOnClick(data: Item, position: Int) {
@@ -86,9 +90,7 @@ class HomeFragment : Fragment() {
                         }
                     }
                 }
-
             }
-
             override fun afterTextChanged(s: Editable?) {
 
             }
